@@ -22,16 +22,13 @@ files_list = [x.strip() for x in content]
 for file_num, file_path_input in enumerate(files_list, start=1):
     # Get the file name without extension
     file_name = os.path.basename(file_path_input)
-    #ID = file_name.split('.')[1]
-    #print('ID=%s' % (ID))
     raw_file_name = os.path.basename(file_name).split('.')[0]
     raw_file_name = raw_file_name.replace(" ", "")
     print('raw_file_name=%s' % (raw_file_name))
     file_dir_input = os.path.dirname(file_path_input)
     print('file_dir_input=%s' % (file_dir_input))
-    #file_dir_output = output_dir_base + '\\' + ID
     file_dir_output = output_dir_base
-    #print('file_dir_output=%s' % (file_dir_output))
+    print('file_dir_output=%s' % (file_dir_output))
     if not os.path.exists(file_dir_output):
         os.makedirs(file_dir_output)
     file_path_output = file_dir_output + '\\' + raw_file_name + '.mp4'
